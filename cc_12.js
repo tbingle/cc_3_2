@@ -50,4 +50,23 @@ function createCustomerCard(name) {
     document.getElementById('customerSection').appendChild(customerCard);
 }
 
+//Task 4 
+
+document.addEventListener("DOMContentLoaded", function() {
+    //Select the parent container 
+    const customerSection = document.getElementById("customerSection");
+    const customerCards = document.querySelectorAll(".customer-card");
+    //Event listener 
+    customerSection.addEventListener("click", function() {
+        console.log("Customer section clicked");
+    });
+    customerCards.forEach(card => {
+        card.addEventListener("click", function(event) {
+            //Log the customer card 
+            console.log("Customer card clicked");
+            //Prevent event bubbling 
+            event.stopPropagation();
+        });
+    });
+});
 
